@@ -42,28 +42,63 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+
                                     <form action="controlUsuarios/createUsuarios.php" method="POST">
-                                    <div class="mb-3">
-                                        <label for="name">Correo Electrónico</label>
-                                        <input type="email" name="email" class="form-control" require>
-                                    </div>
 
-                                    <div class="mb-3">
-                                        <label for="password">Contraseña</label>
-                                        <input type="text" name="password" class="form-control" require>
-                                    </div>
+                                        <div class="mb-3">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" name="nombre" class="form-control" require>
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label for="phone">Teléfono</label>
-                                        <input type="number" name="phone" class="form-control" require>
-                                    </div>
-                                    
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="submit" name="submit" class="btn btn-primary">Agregar</button>
-                                </div>
-                                </form>
+                                        <div class="mb-3">
+                                            <label for="usuario">Usuario</label>
+                                            <input type="text" name="usuario" class="form-control" require>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="password">Contraseña</label>
+                                            <input type="text" name="password" class="form-control" require>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="email">Correo Electrónico</label>
+                                            <input type="email" name="email" class="form-control" require>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="phone">Teléfono</label>
+                                            <input type="text" name="phone" class="form-control" require>
+                                        </div>
+
+                                        
+                                        <!-- inicia select ROL -->
+                                        <div class="mb-3">
+
+                                            <?php
+                                                    $query = "SELECT id_rol, nombre FROM rol";
+                                                    $result = $conn->query($query);
+
+                                                    if( $result->num_rows>0){
+                                                        echo '<label for="">  Rol  </label>';
+                                                        echo '<select name="id_rol" class="form-select">';
+                                                    while($row = $result->fetch_assoc()){
+                                                        echo '<option value=   "'.$row['id_rol'].'">'   .$row['nombre'].   '</option>';
+                                                    }
+                                                        echo '</select>';
+                                                    } else{
+                                                        echo 'no hay Rol';
+                                                    }
+                                            ?>
+                                        </div>
+                                        <!-- fin select ROL -->
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="submit" name="submit" class="btn btn-primary">Agregar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             </div>
@@ -74,13 +109,18 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
+                                        <th>Fecha de Creacion</th>
+                                        <th>Nombre</th>
+                                        <th>Usuario</th>
+                                        <th>contraseña</th>
+                                        <th>Rol</th>
                                         <th>email</th>
                                         <th>Teléfono</th>
                                         <th>Acciones</th>
                                     </tr>  
                                     </thead>
                                     <tbody>
-                                    <?php include("includes/selecttable.php") ?>
+                                    <?php include("controlusuarios/selecttable.php") ?>
                                     </tbody>
                                 </table>
                             </div>

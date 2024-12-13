@@ -82,10 +82,12 @@
                                 </table>
                             </div>
                         </div>
+             
+           
                 </div>
 
                 
-
+             
 
 
             </div>
@@ -93,6 +95,7 @@
 
              <!--aqui va el Footer -->
               <!-- Footer -->
-             <?php include ("includes/footer.php")?>
-           
+              <?php include ("includes/footer.php")?>
+
+             
             

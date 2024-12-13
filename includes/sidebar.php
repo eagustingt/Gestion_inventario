@@ -2,7 +2,7 @@
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
@@ -14,7 +14,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="index.php">
+    <a class="nav-link" href="home.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Home</span></a>
 </li>
@@ -55,9 +55,9 @@
     <div id="menu2" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Gestion de Inventario</h6>
-            <a class="collapse-item" href="#">Control de inventario</a>
-            <a class="collapse-item" href="#">Control de Categoria</a>
+            <h6 class="collapse-header">Categorias y Proveedores</h6>
+            <a class="collapse-item" href="controlCategoria.php">Control de Categorias</a>
+            <a class="collapse-item" href="controlProveedor.php">Control de Proveedores </a>
             
         </div>
     </div>
@@ -81,9 +81,8 @@
     <div id="menu3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion de Movimientos</h6>
-            <a class="collapse-item" href="#">Entrada de Productos</a>
-            <a class="collapse-item" href="#">Salida de Productos</a>
-            <a class="collapse-item" href="#">Consulta de Movimientos</a>
+            <a class="collapse-item" href="nuevoMovimiento.php">Entrada/Salida Productos</a>
+            <a class="collapse-item" href="mostrarMovimiento.php">Consulta de Movimientos</a>
         </div>
     </div>
 </li>

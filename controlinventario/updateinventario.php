@@ -3,7 +3,13 @@ include('../db.php');
 
 
 $id = $_GET['id'];
-$query = "SELECT * FROM inventario WHERE id_producto=$id";
+$query =   "SELECT i.id_producto, i.producto, i.descripción, i.cantidad, i.precio_unitario, i.fecha_ingreso, i.estado, i.id_categoria, i.id_proveedor, c.nombre_categoria , p.nombre_proveedor
+            FROM inventario i
+            JOIN categorias c ON  i.id_categoria = c.id_categoria
+            JOIN proveedores p ON i.id_proveedor = p.id_proveedor
+            WHERE id_producto=$id;
+            ";
+
 $result = $conn->query($query);
 $inventario = $result->fetch_assoc();
 
@@ -21,7 +27,7 @@ if(isset($_POST['submit'])){
 
     $query ="UPDATE inventario 
              SET  producto='$producto',descripción='$descripción',cantidad=$cantidad, precio_unitario=$precio_unitario,
-                  categoría='$categoría',proveedor='$proveedor',estado='$estado'
+                  estado='$estado',id_categoria=$categoría,id_proveedor=$proveedor
              where id_producto=$id";
 
     if($conn->query($query)==TRUE){
@@ -68,20 +74,72 @@ if(isset($_POST['submit'])){
                 <input type="text" name="precio_unitario" class="form-control" value="<?php echo $inventario['precio_unitario']; ?>" require>
             </div>
 
+         
+            <!-- inicia select categoria -->
             <div class="mb-3">
-                <label for="name">categoría</label>
-                <input type="text" name="categoría" class="form-control" value="<?php echo $inventario['categoría']; ?>" require>
+
+                    <?php
+                    $query = "SELECT id_categoria, nombre_categoria FROM categorias";
+                    $result = $conn->query($query);
+
+                    if( $result->num_rows>0){
+                            echo '<label for="categoria">  Categorias  </label>';
+                            echo '<select name="categoría" class="form-control">';  
+                            echo '<option value=   "'.$inventario['id_categoria'].'">   '.$inventario['nombre_categoria'].'   </option>';
+                        while($row = $result->fetch_assoc()){
+                            echo '<option value=   "'.$row['id_categoria'].'">   '.$row['nombre_categoria'].'   </option>';
+                        }
+                            echo '</select>';
+                    } else {                  
+                            echo 'no hay categorias';
+                    }
+                    ?>
+
+            </div>
+            <!-- fin select categoria -->
+
+
+
+            <!-- inicia select proveedor -->
+            <div class="mb-3">
+
+                    <?php
+                        $query = "SELECT id_proveedor, nombre_proveedor FROM proveedores";
+                        $result = $conn->query($query);
+
+                        if($result->num_rows>0){
+                                echo '<label for="proveedor">   Proveedor   </label>';
+                                echo '<select name="proveedor" class="form-select">';
+                                echo '<option value="'.$inventario['id_proveedor'].'">    '.$inventario['nombre_proveedor'].'   </option>';
+                            while($row = $result->fetch_assoc()){
+                                echo '<option value="'.$row['id_proveedor'].'">    '.$row['nombre_proveedor'].'   </option>';
+                            }
+                                echo '</select>';
+                        } else{
+                            echo 'no hay proveedores';
+                        }
+                    ?>
+            </div>
+            <!-- fin select proveedor -->
+
+
+            <div  class="mb-3">
+                <label for="">Estado</label>
+
+                <select name="estado" id="" class="form-select" >
+                    <option value="<?php echo $inventario['estado']; ?>">   <?php echo $inventario['estado']; ?>   </option>    
+                    <option value="Activo">ACTIVO</option>
+                    <option value="Desactivado">DESACTIVADO</option>
+                    <option value="Retenido">RETENIDO</option>
+                </select>
+
             </div>
 
-            <div class="mb-3">
-                <label for="name">proveedor</label>
-                <input type="text" name="proveedor" class="form-control" value="<?php echo $inventario['proveedor']; ?>" require>
-            </div>
 
-            <div class="mb-3">
-                <label for="name">estado</label>
-                <input type="text" name="estado" class="form-control" value="<?php echo $inventario['estado']; ?>" require>
-            </div>
+
+            
+
+
             <button type="submit" name="submit" class="btn btn-success">Actualizar cambios</button>
 
          </form>

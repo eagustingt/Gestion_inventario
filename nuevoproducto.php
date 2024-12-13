@@ -89,11 +89,10 @@
                                                         echo '<label for="categoria">Categorias</label>';
                                                         echo '<select name="categoría" class="form-select">';
                                                     while($row = $result->fetch_assoc()){
-                                                        echo '<option value=   "'.$row['id_categoria'].'">   '.$row['nombre_categoria'].'   </option>';
+                                                        echo '<option value=   "'.$row['id_categoria'].'">'   .$row['nombre_categoria'].   '</option>';
                                                     }
-                                                    echo '</select>';
-                                                    } else
-                                                    {
+                                                        echo '</select>';
+                                                    } else{
                                                         echo 'no hay categorias';
                                                     }
                                                    ?>
@@ -112,21 +111,31 @@
                                                         echo '<label for="proveedor">Proveedor</label>';
                                                         echo '<select name="proveedor" class="form-select">';
                                                     while($row = $result->fetch_assoc()){
-                                                        echo '<option value="'.$row['id_proveedor'].'">'.$row['nombre_proveedor'].'</option>';
+                                                        echo '<option value="'.$row['id_proveedor']. '">'    .$row['nombre_proveedor'].  '</option>';
                                                     }
-                                                    echo '</select>';
-                                                    } else
-                                                    {
+                                                        echo '</select>';
+                                                    } else{
                                                         echo 'no hay proveedores';
                                                     }
                                                    ?>
                                                 </div>
-                                                    <!-- fin select proveedor -->
+                                                <!-- fin select proveedor -->
 
-                                                <div class="mb-3">
-                                                    <label for="estado">Estado</label>
-                                                    <input type="text" name="estado" class="form-control" require>
+
+                                                <div  class="mb-3">
+                                                    <label for="">Estado</label>
+
+                                                    <select name="estado" id="">
+                                                        <option value="Activo">ACTIVO</option>
+                                                        <option value="Desactivado">DESACTIVADO</option>
+                                                        <option value="Retenido">RETENIDO</option>
+                                                    </select>
+
                                                 </div>
+
+
+
+                                                
                                             <!--  </div> -->
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -156,7 +165,7 @@
                                             <th>proveedor</th>
                                             <th>fecha_ingreso</th>
                                             <th>estado</th>
-                                            <th>operacion</th>
+                                         
                                        
                                         </tr>
                                     </thead>
@@ -171,7 +180,7 @@
                                             <th>proveedor</th>
                                             <th>fecha_ingreso</th>
                                             <th>estado</th>
-                                            <th>operacion</th>
+                                        
                                          
                                         </tr>
                                     </tfoot>

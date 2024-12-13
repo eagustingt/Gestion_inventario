@@ -47,7 +47,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>idproducto</th>
+                                            <th>idproducto</th>
                                             <th>Producto</th>
                                             <th>Descripción</th>
                                             <th>Cantidad</th>
@@ -62,7 +62,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>idproducto</th>
+                                            <th>idproducto</th>
                                             <th>producto</th>
                                             <th>descripción</th>
                                             <th>cantidad</th>
@@ -89,6 +89,13 @@
                  <!--Fin Exampol Table -->
 
             </div>
+
+            
+             <!--aqui va el Footer -->
+              <!-- Footer -->
+              <?php include ("includes/footer.php")?>
+
+              
     </div>
         <!-- End of Main Content -->
 
@@ -98,8 +105,5 @@
 
 
 
-             <!--aqui va el Footer -->
-              <!-- Footer -->
-             <?php include ("includes/footer.php")?>
            
             
