@@ -42,13 +42,18 @@
                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
                             </div>
 
-                            <!--forularios -->
+
+
+                            <!--DIV forularios   -->
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Control de inventario</h1>
                                     </div>
-                                    <form class="user" action="login.php" method="POST">
+
+
+                                     <!--forularios LOGIN LOGIN LOGIN -->
+                                    <form class="user" action="login2.php" method="POST">
                                         
                                         <div class="form-group">
                                             <input type="email" name ="email" class="form-control form-control-user"
@@ -84,6 +89,10 @@
                                         </a>
                                         <!--End 0Auth  2.0 -->
                                     </form>
+                                    <!--forularios LOGIN LOGIN LOGIN -->
+
+
+                                    
 
                                     <?php if (isset($_GET['error'])): ?> 
                                     <p style="color: red;">Usuario o contraseña incorrectos</p>
@@ -112,6 +121,9 @@
                                   
                                 </div>
                             </div>
+                            <!--  FIN DIV forularios   -->
+
+
                         </div>
                     </div>
                 </div>

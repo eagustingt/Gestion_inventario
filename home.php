@@ -5,6 +5,8 @@
  <?php include ("includes/header.php")?>
  <?php include ("db.php")?>
 
+
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -42,7 +44,7 @@
 
                             <!-- Page Heading -->
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 class="h3 mb-0 text-gray-800">Dashboard Inventaio</h1>
+                                <h1 class="h3 mb-0 text-gray-800">Dashboard Inventario</h1>
                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                         class="fas fa-download fa-sm text-white-50"></i> Generer Reporte</a>
                             </div>
@@ -279,17 +281,6 @@
 
                     </div>
                     <!-- FIN Content Row 1 -->
-
-
-
-             
-                                
-
-
-
-
-                    
-
 
 
                     <!-- Content Row 2-->

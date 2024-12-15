@@ -1,7 +1,6 @@
 <?php
 include('../db.php');
 
-
 //consulta bd
 $sql= "SELECT p.nombre_proveedor,SUM(i.cantidad) AS totalxproveedor
         from inventario i

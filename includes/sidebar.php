@@ -87,12 +87,36 @@
     </div>
 </li>
 
-<!-- Nav Item - Charts -->
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Reportes</span></a>
+
+
+
+<!-- Nav Item - Charts REPORTES  -->
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">                                                     <!--listaReporte es el id que llama a la lista   -->
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#listaReporte"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-chart-area"></i>
+                    <span>Reportes</span>
+                </a>
+
+                <div id="listaReporte" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reportes :</h6>
+                        <a class="collapse-item" href="reportePdf/productoPdf.php">Reporte de Productos</a>
+                        <a class="collapse-item" href="reportePdf/movimientoPdf.php">Reporte de Movimientos</a> 
+                        <a class="collapse-item" href="reportePdf/categoriaPdf.php">Reporte de Categorias</a>
+                        <a class="collapse-item" href="reportePdf/proveedorPdf.php">Reporte de proveedores</a>
+                        <a class="collapse-item" href="reportePdf/usuarioPdf.php">Reporte de Usuarios</a>
+                      
+                    </div>
+                </div>
 </li>
+<!-- Nav Item - Utilities Collapse Menu -->
+<!--FIN Nav Item - Charts REPORTES   -->
+
+
+
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">

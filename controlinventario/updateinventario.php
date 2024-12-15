@@ -128,7 +128,7 @@ if(isset($_POST['submit'])){
 
                 <select name="estado" id="" class="form-select" >
                     <option value="<?php echo $inventario['estado']; ?>">   <?php echo $inventario['estado']; ?>   </option>    
-                    <option value="Activo">ACTIVO</option>
+                    <option value="Activo"> ACTIVO </option>
                     <option value="Desactivado">DESACTIVADO</option>
                     <option value="Retenido">RETENIDO</option>
                 </select>

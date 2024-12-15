@@ -2,27 +2,29 @@
 include('../db.php');
 
 
-if (isset($_POST['submit'])){
+if (isset($_POST['submit']) && $_POST['nombre_categoria'] != NULL ){
 
-    $nombre_categoria = $_POST['nombre_categoria'];
-    $descripcion_categoria = $_POST['descripcion_categoria'];
-   
-
-
-  $query = "INSERT INTO categorias( nombre_categoria, descripcion_categoria)
-            VALUES            ( '$nombre_categoria','$descripcion_categoria')
-            ";
+        $nombre_categoria = $_POST['nombre_categoria'];
+        $descripcion_categoria = $_POST['descripcion_categoria'];
+      
 
 
-    //$id = $_GET['id'];
-  if($conn->query($query)==TRUE){
-   
-    header('Location: ../controlCategoria.php');
+        $query = "INSERT INTO categorias( nombre_categoria, descripcion_categoria)
+                  VALUES            ( '$nombre_categoria','$descripcion_categoria')
+                  ";
+
+
+          //$id = $_GET['id'];
+        if($conn->query($query)==TRUE){
+        
+          header('Location: ../controlCategoria.php');
+        }else{
+          
+          echo "Error de conexión";
+        }
   }else{
-    
-    echo "Error de conexión";
+    echo "No ingreso informacion";
   }
-}
 
 
 ?>
